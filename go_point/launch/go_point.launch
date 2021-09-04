@@ -1,0 +1,9 @@
+<launch>
+   <node pkg="go_point" type="go_point" name="go_point" required="true" output = "screen" > 
+    <param name="topic_pose" value="pose_robot"/>
+    <param name="topic_v" value="cmd_vel"/>
+    <param name="ka" value="1.2"/>
+    <param name="v_max_xe" value="0.3"/>
+    <param name="timeup" value="0.5"/>
+  </node>
+</launch>

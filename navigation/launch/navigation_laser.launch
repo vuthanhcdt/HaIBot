@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="map_file" default="$(find navigation)/maps/map.yaml"/>
+<!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+    
+  <include file="$(find kinetic_rv)/launch/kinetic_rv.launch"/>
+  <include file="$(find kinetic_iv)/launch/kinetic_iv.launch"/>
+  <node pkg="joy" type="joy_node" name="joy_node" required="true" output = "screen" />
+
+  <node pkg="ps3joy" type="ps3" name="ps3" required="true" output = "screen" >
+    <param name="topic_vdai_vgoc" value="Twist"/>
+    <param name="vtdai_xe" type="double" value="0.4" />
+    <param name="vtgoc_xe" type="double" value="0.5" />
+  </node>
+  
+
+  <include file="$(find ekf)/launch/laser_scan_matcher.launch"/>
+  <!-- AMCL -->
+  <include file="$(find navigation)/launch/amcl.launch"/>
+
+  <!-- <include file="$(find navigation)/launch/move_base.launch"/> -->
+ 
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find navigation)/rviz/navigation.rviz" required="true"/>
+ 
+</launch>
+
+
+
+
+
+
+
+
+  

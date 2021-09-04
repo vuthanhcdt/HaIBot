@@ -1,0 +1,6 @@
+<launch>
+  <node pkg="control_driver" type="control_driver" name="control_driver" required="true" output = "screen" > 
+    <param name="port" value="/dev/ttyUSB0"/>
+    <param name="topic_v" value="van_toc_banh"/>
+  </node>
+</launch>

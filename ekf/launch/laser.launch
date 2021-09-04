@@ -1,0 +1,11 @@
+
+<launch>
+ <include file="$(find sick_scan)/launch/sick_nav_2xx.launch"/>
+
+<!-- Transformation to see cloud-data in rviz -->
+  <node pkg="tf" type="static_transform_publisher" name="laser_base_to_laser" args="0 0 0 0 0 0 1 base_laser laser 50"  />
+  <node pkg="tf" type="static_transform_publisher" name="base_laser_to_base_link" args="0.24 0 0 0 0 0 1 base_link base_laser  50"  />
+
+  <include file="$(find kinetic_rv)/launch/kinetic_rv.launch"/>
+  <include file="$(find kinetic_iv)/launch/kinetic_iv.launch"/>
+</launch>

@@ -1,0 +1,12 @@
+<launch>
+  <node pkg="kinetic_iv" type="kinetic_iv" name="kinetic_iv" required="true" output = "screen" > 
+    <param name="port" value="/dev/ttyUSB0"/>
+    <param name="topic_odom" value="odom_encoder"/>
+    <param name="topic_imu" value="IMU"/>
+    <param name="topic_v" value="van_toc_banh"/>
+    <param name="fixed_frame_odom" value="odom"/>
+    <param name="ban_kinh_banh" type="double" value="0.05" />
+    <param name="khoang_cach_banh" type="double" value="0.38" />
+    <param name="so_xung_1_vong" type="double" value="2000.0" />
+  </node>
+</launch>

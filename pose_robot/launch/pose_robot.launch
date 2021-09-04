@@ -1,0 +1,8 @@
+<launch>
+  <node pkg="pose_robot" type="pose_robot" name="pose_robot" required="true" output = "screen" > 
+    <param name="map_frame" value="map"/>
+    <param name="base_frame" value="base_link"/>
+    <param name="publish_frequency" value="20"/>
+    <param name="topic_pose" value="pose_robot"/>
+  </node>
+</launch>

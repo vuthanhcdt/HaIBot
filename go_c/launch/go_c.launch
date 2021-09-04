@@ -1,0 +1,19 @@
+<launch>
+  <!-- <include file="$(find ekf)/launch/ekf.launch"/> -->
+
+  <node pkg="go_c" type="go_c" name="go_c" required="true" output = "screen" > 
+  <param name="topic_pose" value="pose_robot"/>
+    <param name="topic_v" value="cmd_vel"/>
+
+    <param name="toa_do_tam_x" value="1"/>
+    <param name="toa_do_tam_y" value="1"/>
+    <param name="ban_kinh_duong_tron" value="2"/>
+
+    <param name="khoang_nhin_truoc" value="1.2"/>
+
+    <param name="ka" value="1.2"/>
+    <param name="v_max_xe" value="0.5"/>
+    <param name="timeup" value="0.5"/>
+  </node>
+
+</launch>

@@ -1,0 +1,28 @@
+<launch>
+
+ 
+    <node pkg="kinetic_rv" type="kinetic_rv" name="kinetic_rv" required="true" output = "screen" > 
+    <param name="topic_v" value="van_toc_banh"/>
+    <param name="v_banh_trai" type="int" value="0" />
+    <param name="v_banh_phai" type="int" value="0" />
+    <param name="v_max_dong_co" type="int" value="10000" />
+    <param name="pwm_max" type="int" value="255" />
+    <param name="hop_giam_toc" type="double" value="71.2" />
+    <param name="vtdai_xe" type="double" value="0" />
+    <param name="vtgoc_xe" type="double" value="0" />
+    <param name="kc_hai_banh" type="double" value="0.38" />
+    <param name="t_gia_toc" type="double" value="1" />
+    <param name="t_giam_toc" type="double" value="0.7" />
+  </node>
+   <include file="$(find kinetic_iv)/launch/kinetic_iv.launch"/>
+
+
+  <node pkg="joy" type="joy_node" name="joy_node" required="true" output = "screen" />
+  <node pkg="ps3joy" type="ps3" name="ps3" required="true" output = "screen" >
+    <param name="topic_vdai_vgoc" value="Twist"/>
+    <param name="vtdai_xe" type="double" value="0.6" />
+    <param name="vtgoc_xe" type="double" value="0.5" />
+  </node>
+  
+
+</launch>
