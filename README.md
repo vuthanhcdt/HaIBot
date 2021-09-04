@@ -45,7 +45,7 @@ $ sudo bash
 $ roslaunch navigation navigation.launch
 ```
 
-##Test Path tracking ##
+## Test Path tracking ##
 ```
 $ roscore
   open new terminal
