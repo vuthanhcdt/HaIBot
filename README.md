@@ -51,7 +51,7 @@ $ roscore
   open new terminal
 $ sudo bash
 $ roslaunch navigation navigation.launch
-open new terminal
+  open new terminal
 $ roslaunch go_point go_point.launch
 
 ```
