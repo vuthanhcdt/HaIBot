@@ -27,19 +27,13 @@ $ https://github.com/vuthanhcdt/HaIBot.git
 ```
 $ cd ~/haibot/
 $ catkin_make
-```
-If you finish building code, you need to source your worksapce.
-please add **source ~/haibot/devel/setup.bash** in your .bashrc.<br/>
-and use the commands below to copy the rule for haibot usb devices.<br/>
-```
 
 ## Test mapping with ps3 ##
-**On TX1 setting commmand**
+
 ```
 $ roscore
   open new terminal(Just only run once time for ps3 paired)
 $ sudo bash
-$ hciconfig hci0 reset
 $ roslaunch loco ps3_pairing.launch
   open new terminal
 $ roslaunch loco hector_slam_pcar.launch
